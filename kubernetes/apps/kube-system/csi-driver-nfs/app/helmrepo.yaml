@@ -1,0 +1,15 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: csi-driver-nfs
+spec:
+  interval: 1h
+  layerSelector:
+    mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
+    operation: copy
+  url: oci://ghcr.io/onedr0p/charts-mirror/csi-driver-nfs
+  ref:
+    tag: v4.10.0
+  verify:
+    provider: cosign
