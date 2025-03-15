@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - ./helmrepo.yaml
   - ./helmrelease.yaml
-  # - ./clustersecretstore.yaml
+  - ./clustersecretstore.yaml
 configMapGenerator:
   - name: external-secrets-values
     files:
